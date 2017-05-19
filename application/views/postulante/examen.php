@@ -12,7 +12,7 @@
 <body >
 <h1>Nombre: </h1>
 <h1>CI:</h1>
-  <form name="" method="post">
+  <form name="" method="post" action="<?= base_url()?>respuesta/resultado">
     <table  width="95%" style="border: 2px solid black; border-spacing: 15px;">
       <tr>
         <th style="background-color: #cc9900; text-align: center; border: 2px solid black; font-family: Wide Latin "><b><h4>Area de fisica</h4></b></th> 
@@ -28,31 +28,31 @@
             <tr>
               <td><b>Opcion A.</b>
                 <input type="radio" name="pre1"><?= $fila->respuestaposi ?>
-                <input type="hidden" name="pre1" value="<?= $fila->id_areafis ?>">
+                <input type="hidden" name="idpre1" value="<?= $fila->id_areafis ?>">
               </td>
             </tr>
             <tr>
               <td><b>Opcion B.</b>
                 <input type="radio" name="pre1"><?= $fila->respuestafalun ?>
-                <input type="hidden" name="pre1" value="<?= $fila->id_areafis ?>">
+                <input type="hidden" name="idpre2" value="<?= $fila->id_areafis ?>">
               </td>
             </tr>
             <tr>
               <td><b>Opcion C.</b>
                 <input type="radio" name="pre1"><?= $fila->respuestafaldos ?>
-                <input type="hidden" name="pre1" value="<?= $fila->id_areafis ?>">
+                <input type="hidden" name="idpre3" value="<?= $fila->id_areafis ?>">
               </td>
             </tr>
             <tr>
               <td><b>Opcion D.</b>
                 <input type="radio" name="pre1"><?= $fila->respuestafaltres ?>
-                <input type="hidden" name="pre1" value="<?= $fila->id_areafis ?>">
+                <input type="hidden" name="idpre4" value="<?= $fila->id_areafis ?>">
               </td>
             </tr>
             <tr>
               <td><b>Opcion E.</b>
                 <input type="radio" name="pre1"><?= $fila->respuestafalcuatro ?>
-                <input type="hidden" name="pre1" value="<?= $fila->id_areafis ?>">
+                <input type="hidden" name="idpre5" value="<?= $fila->id_areafis ?>">
               </td>
             </tr>
             <tr>

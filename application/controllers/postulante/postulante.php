@@ -14,19 +14,44 @@ class Postulante extends CI_Controller
 	
 	public function index()
 	{
+		
+
+		if(isset($_POST['ci'])){
+
+			$this->load->model('login/usuariologin_model');
+			if($this->usuariologin_model->login($_POST['username'],$_POST['ci'])){
+				$this->load->model('examen/obtenerpreg_model');
+				$result = $this->obtenerpreg_model->selefis($_POST['carrera']);
+				$result1 = $this->obtenerpreg_model->selemat($_POST['carrera']);
+				$result2 = $this->obtenerpreg_model->selehisto($_POST['carrera']);
+				$result3 = $this->obtenerpreg_model->selelite($_POST['carrera']);
+				$data = array('consulta' => $result,
+					'consulta1' => $result1,
+					'consulta2' => $result2,
+					'consulta3' => $result3,
+					);
+				$this->load->view("postulante/examen",$data);
+			}else{
+				redirect("home");
+			}
+		}
+		
+		//$this->load->view("/postulante/postulante");
+
+
 		//echo $_POST['carrera'];
-		$this->load->model('examen/obtenerpreg_model');
-		$result = $this->obtenerpreg_model->selefis($_POST['carrera']);
-		$result1 = $this->obtenerpreg_model->selemat($_POST['carrera']);
-		$result2 = $this->obtenerpreg_model->selehisto($_POST['carrera']);
-		$result3 = $this->obtenerpreg_model->selelite($_POST['carrera']);
+		//$this->load->model('examen/obtenerpreg_model');
+		//$result = $this->obtenerpreg_model->selefis($_POST['carrera']);
+		//$result1 = $this->obtenerpreg_model->selemat($_POST['carrera']);
+		//$result2 = $this->obtenerpreg_model->selehisto($_POST['carrera']);
+		//$result3 = $this->obtenerpreg_model->selelite($_POST['carrera']);
 		//$data1 = array('consulta' => $result1);
-		$data = array('consulta' => $result,
-				'consulta1' => $result1,
-				'consulta2' => $result2,
-				'consulta3' => $result3,
-			);
-		$this->load->view("postulante/examen",$data);
+		//$data = array('consulta' => $result,
+		//		'consulta1' => $result1,
+		//		'consulta2' => $result2,
+		//		'consulta3' => $result3,
+		//	);
+		//$this->load->view("postulante/examen");
 		/*
 		$param['ra'] = $this->input->post('username');
 		$param['re']=$this->input->post('apellido_pat');
@@ -41,4 +66,6 @@ class Postulante extends CI_Controller
 	{
 		$this->load->view("/postulante/postulante");	
 	}
+
+
 }

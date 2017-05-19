@@ -13,14 +13,14 @@ class Admi extends CI_Controller
 	public function index()
 	{
 
-		if ($this->session->userdata('username')) {
+		/*if ($this->session->userdata('username')) {
 			redirect ('admiboard');
-		}
+		}*/
 		
 		if (isset($_POST['password'])){
 			$this->load->model('login/usuario_model');
 			if($this->usuario_model->login($_POST['username'],$_POST['password'])){
-				$this->session->set_userdata('username',$_POST['username']);
+				//$this->session->set_userdata('username',$_POST['username']);
 				redirect ('admiboard');
 			}else
 			{

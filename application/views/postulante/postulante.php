@@ -55,6 +55,13 @@
                                		 			<input id="ci" type="int" class="form-control" name="ci" required placeholder="Carnet de Indentidad">
 											               </div>
                         				</div>
+
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input id="nota" type="hidden" class="form-control" name="nota">
+                                     </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="carrera" class="col-md-4 control-label" >CARRERA</label>
                                     <div class="col-md-6">
@@ -81,4 +88,4 @@
 			</div>
     	</div>
 </body>
-</html>
+</html> 
