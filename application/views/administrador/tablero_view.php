@@ -63,7 +63,7 @@ div.panel {
         <td >"D.S.A"
           <table class="table table-bordered" BORDER=1 WIDTH=900>
               <tr>
-                  <td style="color: #3366ff"><button style="color: #3366ff"  class="accordion">ARQUITECTURA</button>
+                  <td style="color: #3366ff"><button style="color: #3366ff"  class="accordion">ARQUITECTURA</button> 
                     <div style="color: black;font-family: 'Times New Roman'" class="panel">
                       <p> <!-- Trigger the modal with a button -->
                         <button type="button" class="btn default" data-toggle="modal" data-target="#myModal">FISICA</button>

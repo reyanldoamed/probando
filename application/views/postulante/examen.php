@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html>
 <head>
     <!-- Latest compiled and minified CSS -->
@@ -10,8 +10,14 @@
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body >
-<h1>Nombre: </h1>
-<h1>CI:</h1>
+      <?php
+        foreach($consulta4->result() as $fila){
+      ?>
+        <h1>Nombre:<?= $fila->nombres ?></h1> <h1>Apellidos: <?= $fila->apellido_pat ?>   <?= $fila->apellido_mat ?> </h1>
+        <h1>CI:<?= $fila->ci ?></h1>
+      <?php
+      }
+      ?>
   <form name="" method="post" action="<?= base_url()?>respuesta/resultado">
     <table  width="95%" style="border: 2px solid black; border-spacing: 15px;">
       <tr>
@@ -27,32 +33,32 @@
             </tr>
             <tr>
               <td><b>Opcion A.</b>
-                <input type="radio" name="pre1"><?= $fila->respuestaposi ?>
-                <input type="hidden" name="idpre1" value="<?= $fila->id_areafis ?>">
+                <input type="radio" name="pre<?= $i ?>" value="<?= $fila->respuestaposi ?>"><?= $fila->respuestaposi ?>
+                <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areafis ?>">
               </td>
             </tr>
             <tr>
               <td><b>Opcion B.</b>
-                <input type="radio" name="pre1"><?= $fila->respuestafalun ?>
-                <input type="hidden" name="idpre2" value="<?= $fila->id_areafis ?>">
+                <input type="radio" name="pre<?= $i ?>"><?= $fila->respuestafalun ?>
+                <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areafis ?>">
               </td>
             </tr>
             <tr>
               <td><b>Opcion C.</b>
-                <input type="radio" name="pre1"><?= $fila->respuestafaldos ?>
-                <input type="hidden" name="idpre3" value="<?= $fila->id_areafis ?>">
+                <input type="radio" name="pre<?= $i ?>"><?= $fila->respuestafaldos ?>
+                <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areafis ?>">
               </td>
             </tr>
             <tr>
               <td><b>Opcion D.</b>
-                <input type="radio" name="pre1"><?= $fila->respuestafaltres ?>
-                <input type="hidden" name="idpre4" value="<?= $fila->id_areafis ?>">
+                <input type="radio" name="pre<?= $i ?>"><?= $fila->respuestafaltres ?>
+                <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areafis ?>">
               </td>
             </tr>
             <tr>
               <td><b>Opcion E.</b>
-                <input type="radio" name="pre1"><?= $fila->respuestafalcuatro ?>
-                <input type="hidden" name="idpre5" value="<?= $fila->id_areafis ?>">
+                <input type="radio" name="pre<?= $i ?>"><?= $fila->respuestafalcuatro ?>
+                <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areafis ?>">
               </td>
             </tr>
             <tr>
@@ -74,32 +80,32 @@
         <input type="hidden" name="pre1" value="<?= $fila->id_areamat ?>">
       </tr>
       <td><b>Opcion A.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestaposi ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_areamat ?>">
+          <input type="radio" name="mapre<?= $i ?>"><?= $fila->respuestaposi ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areamat ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion B.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafalun ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_areamat ?>">
+          <input type="radio" name="mapre<?= $i ?>"><?= $fila->respuestafalun ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areamat ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion C.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafaldos ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_areamat ?>">
+          <input type="radio" name="mapre<?= $i ?>"><?= $fila->respuestafaldos ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areamat ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion D.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafaltres ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_areamat ?>">
+          <input type="radio" name="mapre<?= $i ?>"><?= $fila->respuestafaltres ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areamat ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion E.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafalcuatro ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_areamat ?>">
+          <input type="radio" name="mapre<?= $i ?>"><?= $fila->respuestafalcuatro ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areamat ?>">
         </td>
       </tr>
       <tr>
@@ -122,32 +128,32 @@
       </tr>
       <tr>
         <td><b>Opcion A.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestaposi ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_areahistoria ?>">
+          <input type="radio" name="hispre<?= $i ?>"><?= $fila->respuestaposi ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areahistoria ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion B.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafalun ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_areahistoria ?>">
+          <input type="radio" name="hispre<?= $i ?>"><?= $fila->respuestafalun ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areahistoria ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion C.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafaldos ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_areahistoria ?>">
+          <input type="radio" name="hispre<?= $i ?>"><?= $fila->respuestafaldos ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areahistoria ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion D.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafaltres ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_areahistoria ?>">
+          <input type="radio" name="hispre<?= $i ?>"><?= $fila->respuestafaltres ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areahistoria ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion E.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafalcuatro ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_areahistoria ?>">
+          <input type="radio" name="hispre<?= $i ?>"><?= $fila->respuestafalcuatro ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_areahistoria ?>">
         </td>
       </tr>
       <?php
@@ -169,32 +175,32 @@
       </tr>
       <tr>
         <td><b>Opcion A.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestaposi ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_arealite ?>">
+          <input type="radio" name="litpre<?= $i ?>"><?= $fila->respuestaposi ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_arealite ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion B.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafalun ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_arealite ?>">
+          <input type="radio" name="litpre<?= $i ?>"><?= $fila->respuestafalun ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_arealite ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion C.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafaldos ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_arealite ?>">
+          <input type="radio" name="litpre<?= $i ?>"><?= $fila->respuestafaldos ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_arealite ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion D.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafaltres ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_arealite ?>">
+          <input type="radio" name="litpre<?= $i ?>"><?= $fila->respuestafaltres ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_arealite ?>">
         </td>
       </tr>
       <tr>
         <td><b>Opcion E.</b>
-          <input type="radio" name="pre1"><?= $fila->respuestafalcuatro ?>
-          <input type="hidden" name="pre1" value="<?= $fila->id_arealite ?>">
+          <input type="radio" name="litpre<?= $i ?>"><?= $fila->respuestafalcuatro ?>
+          <input type="hidden" name="idpre<?= $i ?>" value="<?= $fila->id_arealite ?>">
         </td>
       </tr>
       <?php

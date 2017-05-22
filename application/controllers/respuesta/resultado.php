@@ -2,7 +2,7 @@
 /**
 * 
 */
-class Resultado extends CI_Controller
+class Resultado extends CI_Controller   
 {
 	public function __construct() {
         parent::__construct(); 
@@ -14,7 +14,7 @@ class Resultado extends CI_Controller
 	{
 
 	$param['pregunta'] = $this->input->post('pre1');
-	echo $param['pregunta'];
+	echo $param['pregunta']; 
 	}
 	//$this->load->view("administrador/tablero_view",$data);
 } 

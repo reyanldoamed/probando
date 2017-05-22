@@ -3,7 +3,7 @@ if(! defined('BASEPATH')) exit('No direct script access allowed');
 /** 
 * 
 */
-class Obtenerpreg_model extends CI_Model
+class Obtenerpreg_model extends CI_Model  
 {
 	public $variable;
 	 
@@ -32,6 +32,7 @@ class Obtenerpreg_model extends CI_Model
 			'carrera'=> $carrera,
 		);
 		$this->db->select('*');
+		$this->db->where("id_carrera",$data['carrera']);
 		$this->db->where("id_carrera",$data['carrera']);
 		$this->db->order_by('rand()');
 		$this->db->limit(5);
@@ -70,5 +71,17 @@ class Obtenerpreg_model extends CI_Model
 		
 		$resultado3 = $this->db->get();
 		return $resultado3;
+	}
+	public function seleusuario($ci)
+	{
+		$data = array(
+			'ci' => $ci,
+		);
+		$this->db->select('*');
+		$this->db->where('ci',$data['ci']);
+		$this->db->from('postulante');
+		$resultado4 = $this->db->get();
+		return $resultado4;
+
 	}
 }

@@ -25,10 +25,12 @@ class Postulante extends CI_Controller
 				$result1 = $this->obtenerpreg_model->selemat($_POST['carrera']);
 				$result2 = $this->obtenerpreg_model->selehisto($_POST['carrera']);
 				$result3 = $this->obtenerpreg_model->selelite($_POST['carrera']);
+				$result4 = $this->obtenerpreg_model->seleusuario($_POST['ci']);
 				$data = array('consulta' => $result,
 					'consulta1' => $result1,
 					'consulta2' => $result2,
 					'consulta3' => $result3,
+					'consulta4' => $result4,
 					);
 				$this->load->view("postulante/examen",$data);
 			}else{
